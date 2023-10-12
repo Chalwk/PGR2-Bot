@@ -122,6 +122,7 @@ public class Tracks {
         add("Warehouse Loop");
         add("Yokohama Bay Tour");
         add("Yokohama Challenge");
+
     }};
     public static ArrayList<String> paris = new ArrayList<>() {{
         add("Avenue D'lena");
@@ -132,12 +133,6 @@ public class Tracks {
         add("Les Deux Ponts");
         add("Les Monuments Celebres");
     }};
-
-
-    //==================================\\
-    // DLC Tracks:
-    //==================================\\
-
     public static ArrayList<String> longbeach = new ArrayList<>() {{
         add("Aquarium");
         add("CC Circular");

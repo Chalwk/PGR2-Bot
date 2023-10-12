@@ -9,19 +9,22 @@ public class Cars {
 
     public static Map<String, ArrayList> carsMap = new HashMap<>();
 
-    public static void populateCars() {
-        carsMap.put("Compact Sports", compactSports);
-        carsMap.put("Sports Convertible", sportsConvertible);
-        carsMap.put("Coupe", coupe);
-        carsMap.put("Sport Utility", sportUtility);
-        carsMap.put("Pacific Muscle", pacificMuscle);
-        carsMap.put("Roadster", roaster);
-        carsMap.put("Classic", classic);
-        carsMap.put("Sports Coupe", sportsCoupe);
-        carsMap.put("American Muscle", americanMuscle);
-        carsMap.put("Super Car", superCar);
-        carsMap.put("Grand Touring", grandTouring);
-    }
+    public static ArrayList<String> trackSpecials = new ArrayList<>() {{
+        add("Ferrari Challenge Stradale");
+        add("Porsche 911 GT3 (996)");
+        add("Noble M12 GTO3");
+        add("Honda NSX Type-R (J)");
+        add("Dodge Viper SRT-10");
+        add("Vauxhall VX220 Turbo");
+        add("Lotus Exige");
+        add("Ascari KZ1");
+        add("Jaguar XJ220");
+        add("Porsche 911 GT2 (993)");
+        add("Ferrari F50");
+        add("Ferrari F40");
+        add("Porsche 959");
+        add("Ford GT40");
+    }};
 
     public static ArrayList<String> compactSports = new ArrayList<>() {{
         add("Lancia Delta Integrale Evo");
@@ -126,4 +129,53 @@ public class Cars {
         add("Ferrari Testarossa");
         add("Bentley Continental GT");
     }};
+    public static ArrayList<String> ultimate = new ArrayList<>() {{
+        add("TVR Cebera Speed 12 *Platinum");
+        add("Porsche 911 GT1 *Gold");
+        add("Mercedes-Benz CLK-GTR *Silver");
+        add("Pagani Zonda S");
+        add("Enzo Ferrari");
+        add("Koenigsegg CC V8S");
+        add("Porsche Carrera GT");
+        add("Ford GT");
+        add("Saleen S7");
+    }};
+    public static ArrayList<String> parisBoosterPack = new ArrayList<>() {{
+        add("TVR Cebera Speed 12 (Live)");
+        add("Ferrari 288 GTO");
+        add("BMW 645Ci");
+        add("Ferrari 365 GTS4");
+        add("Porsche 356A Carrera Speedster");
+        add("Ferrari 250TR");
+        add("Chevrolet Corvette C6");
+        add("BMW M3 CSL");
+    }};
+    public static ArrayList<String> longBeachBoosterPack = new ArrayList<>() {{
+        add("Radical SR3 Turbo");
+        add("Porsche 911 GT2 Clubsport");
+        add("Volkswagen Nardo");
+        add("Ferrari 612 Scaglietti");
+        add("Dodge Challenger R/T Hemi");
+        add("Dodge RAM SRT-10");
+        add("Ariel Atom 2");
+        add("Subaru Impreza 22B STi");
+    }};
+
+    public static void populateCars() {
+        carsMap.put("Compact Sports", compactSports);
+        carsMap.put("Sports Convertible", sportsConvertible);
+        carsMap.put("Coupe", coupe);
+        carsMap.put("Sport Utility", sportUtility);
+        carsMap.put("Pacific Muscle", pacificMuscle);
+        carsMap.put("Roadster", roaster);
+        carsMap.put("Classic", classic);
+        carsMap.put("Sports Coupe", sportsCoupe);
+        carsMap.put("American Muscle", americanMuscle);
+        carsMap.put("Super Car", superCar);
+        carsMap.put("Grand Touring", grandTouring);
+        carsMap.put("Track Specials", trackSpecials);
+        carsMap.put("Ultimate", ultimate);
+        carsMap.put("Paris Booster Pack", parisBoosterPack);
+        carsMap.put("Long Beach Booster Pack", longBeachBoosterPack);
+    }
 }
