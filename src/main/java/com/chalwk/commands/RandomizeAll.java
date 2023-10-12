@@ -21,8 +21,6 @@ public class RandomizeAll implements CommandInterface {
     private final String vehicleClassLabel = "Vehicle Class:";
     private final String vehicleLabel = "Vehicle: :race_car:";
     private final String trackLabel = "Track: \uD83C\uDFC1";
-    private final String timeLabel = "Time of Day:";
-    private final String weatherLabel = "Weather:";
 
     @Override
     public String getName() {
@@ -106,7 +104,7 @@ public class RandomizeAll implements CommandInterface {
         EmbedBuilder embed = new EmbedBuilder();
         embed.setTitle("PGR2  |  RANDOM TRACK:");
         embed.setColor(0x00FF00);
-        embed.addField(trackLabel, randomTrack, false);
+        embed.addField(trackLabel, randomTrack + " (" + tracks + ")", false);
         event.replyEmbeds(embed.build()).queue();
     }
 
@@ -136,7 +134,9 @@ public class RandomizeAll implements CommandInterface {
         embed.addField(vehicleClassLabel, randomVehicleClass, false);
         embed.addField(vehicleLabel, randomVehicle, false);
         embed.addField(trackLabel, randomTrack, false);
+        String timeLabel = "Time of Day:";
         embed.addField(timeLabel, randomTime, false);
+        String weatherLabel = "Weather:";
         embed.addField(weatherLabel, randomWeather, false);
         event.replyEmbeds(embed.build()).queue();
     }

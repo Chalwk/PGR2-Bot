@@ -7,8 +7,6 @@ import com.chalwk.listeners.CommandManager;
 import com.chalwk.listeners.EventListeners;
 import net.dv8tion.jda.api.OnlineStatus;
 import net.dv8tion.jda.api.entities.Activity;
-import net.dv8tion.jda.api.entities.Guild;
-import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEvent;
 import net.dv8tion.jda.api.requests.GatewayIntent;
 import net.dv8tion.jda.api.sharding.DefaultShardManagerBuilder;
 import net.dv8tion.jda.api.sharding.ShardManager;
@@ -29,8 +27,6 @@ import static org.reflections.Reflections.log;
 
 public class Main {
 
-    public static String botName;
-    public static String botAvatar;
     public static ArrayList<String> weather = new ArrayList<>() {{
         add("Sunny :sun_with_face:");
         add("Rain :cloud_rain:");
@@ -55,18 +51,6 @@ public class Main {
         } catch (LoginException | IOException e) {
             System.out.println("Failed to start bot: " + e.getMessage());
         }
-    }
-
-    public static String getBotName() {
-        return botName;
-    }
-
-    public static String getBotAvatar() {
-        return botAvatar;
-    }
-
-    public static Guild getGuild(SlashCommandInteractionEvent event) {
-        return event.getGuild();
     }
 
     @NotNull
@@ -98,8 +82,6 @@ public class Main {
 
         shardManager = builder.build();
         shardManager.addEventListener(new EventListeners());
-        botName = shardManager.getShards().get(0).getSelfUser().getName();
-        botAvatar = shardManager.getShards().get(0).getSelfUser().getAvatarUrl();
 
         return shardManager;
     }
