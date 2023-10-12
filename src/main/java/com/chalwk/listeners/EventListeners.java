@@ -3,8 +3,6 @@
 package com.chalwk.listeners;
 
 import net.dv8tion.jda.api.events.guild.GuildReadyEvent;
-import net.dv8tion.jda.api.events.interaction.component.ButtonInteractionEvent;
-import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
 import org.jetbrains.annotations.NotNull;
 
@@ -19,7 +17,7 @@ public class EventListeners extends ListenerAdapter {
                 | |_) | |  _| |_) | __) |
                 |  __/| |_| |  _ < / __/
                 |_|    \\____|_| \\_|_____|
-                Copyright (c) 2023, GamesBot. Jericho Crosby
+                Copyright (c) 2023, PGR2-Bot. Jericho Crosby
                 _______________________________________________""");
     }
 }
