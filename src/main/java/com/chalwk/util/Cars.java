@@ -45,6 +45,7 @@ public class Cars {
         add("Mazda Miata MX-5");
         add("Audi TT Roadster");
     }};
+
     public static ArrayList<String> coupe = new ArrayList<>() {{
         add("Audi TT 3.2 Quattro");
         add("BMW M3");
@@ -54,6 +55,7 @@ public class Cars {
         add("Mazda RX-8");
         add("Audi TT Coupe");
     }};
+
     public static ArrayList<String> sportUtility = new ArrayList<>() {{
         add("Ford SVT Lighting");
         add("BMW X5 4.6is");
@@ -62,6 +64,7 @@ public class Cars {
         add("Chevrolet SSR");
         add("Volvo XC90");
     }};
+
     public static ArrayList<String> pacificMuscle = new ArrayList<>() {{
         add("Nissan Skyline GT-R (R34) Nür");
         add("Subaru Impreza WRX STi");
@@ -70,6 +73,7 @@ public class Cars {
         add("Mitsubishi Lancer Evolution VII");
         add("Mitsubishi 3000 GT VR4");
     }};
+
     public static ArrayList<String> roaster = new ArrayList<>() {{
         add("AC 427 MKII");
         add("Renault Spider");
@@ -78,6 +82,7 @@ public class Cars {
         add("Lotus Elise");
         add("Vauxhall VX220");
     }};
+
     public static ArrayList<String> classic = new ArrayList<>() {{
         add("Ferrari 250 GTO *Bronze");
         add("Lancia Stratos");
@@ -90,6 +95,7 @@ public class Cars {
         add("Nissan 240Z");
         add("Toyota 2000GT");
     }};
+
     public static ArrayList<String> sportsCoupe = new ArrayList<>() {{
         add("Trident Iceni");
         add("Porsche 911 Carrera Coupe (996)");
@@ -100,6 +106,7 @@ public class Cars {
         add("Jaguar XKR");
         add("Lexus SC 430");
     }};
+
     public static ArrayList<String> americanMuscle = new ArrayList<>() {{
         add("Pontiac Trans Am");
         add("Chevrolet Camaro Z/28");
@@ -109,6 +116,7 @@ public class Cars {
         add("Chevrolet Corvette Stingray");
         add("Pontiac GTO");
     }};
+
     public static ArrayList<String> superCar = new ArrayList<>() {{
         add("Ferrari 355 F1");
         add("Porsche 911 Turbo (996)");
@@ -119,6 +127,7 @@ public class Cars {
         add("TVR Tuscan Speed 6");
         add("Delfino Feroce *Steel");
     }};
+
     public static ArrayList<String> grandTouring = new ArrayList<>() {{
         add("Lotus Esprit V8");
         add("Aston Marton Vanquish");
@@ -129,6 +138,7 @@ public class Cars {
         add("Ferrari Testarossa");
         add("Bentley Continental GT");
     }};
+
     public static ArrayList<String> ultimate = new ArrayList<>() {{
         add("TVR Cebera Speed 12 *Platinum");
         add("Porsche 911 GT1 *Gold");
@@ -140,6 +150,7 @@ public class Cars {
         add("Ford GT");
         add("Saleen S7");
     }};
+
     public static ArrayList<String> parisBoosterPack = new ArrayList<>() {{
         add("TVR Cebera Speed 12 (Live)");
         add("Ferrari 288 GTO");
@@ -150,6 +161,7 @@ public class Cars {
         add("Chevrolet Corvette C6");
         add("BMW M3 CSL");
     }};
+
     public static ArrayList<String> longBeachBoosterPack = new ArrayList<>() {{
         add("Radical SR3 Turbo");
         add("Porsche 911 GT2 Clubsport");

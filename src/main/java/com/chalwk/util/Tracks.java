@@ -16,6 +16,7 @@ public class Tracks {
         add("Passeig de Colom");
         add("Place de Jaume");
     }};
+
     public static ArrayList<String> chicago = new ArrayList<>() {{
         add("Chicago River Tour");
         add("East Kinzie Crossover");
@@ -28,6 +29,7 @@ public class Tracks {
         add("Wells & Lake");
         add("West On Wacker");
     }};
+
     public static ArrayList<String> edinburgh = new ArrayList<>() {{
         add("Castle Eight");
         add("Grassmarket East");
@@ -40,6 +42,7 @@ public class Tracks {
         add("Princess Street Loop");
         add("Terrace Sprint");
     }};
+
     public static ArrayList<String> florence = new ArrayList<>() {{
         add("Arno");
         add("Arno 2");
@@ -53,6 +56,7 @@ public class Tracks {
         add("Ponte Vecchio");
         add("Uffizi");
     }};
+
     public static ArrayList<String> hongKong = new ArrayList<>() {{
         add("Admiralty");
         add("Cotton Tree Drive");
@@ -63,6 +67,7 @@ public class Tracks {
         add("The Waterfront");
         add("Wan Chai Run");
     }};
+
     public static ArrayList<String> moscow = new ArrayList<>() {{
         add("KGB Corner");
         add("Kremlin 1");
@@ -72,9 +77,11 @@ public class Tracks {
         add("Red Square 2");
         add("St. Basil's Circle");
     }};
+
     public static ArrayList<String> nurburgring = new ArrayList<>() {{
         add("Nürburgring");
     }};
+
     public static ArrayList<String> stockholm = new ArrayList<>() {{
         add("Bridges");
         add("Gamla Island Hopping");
@@ -87,6 +94,7 @@ public class Tracks {
         add("Round the Riksdagshuset");
         add("Speed Freak");
     }};
+
     public static ArrayList<String> sydney = new ArrayList<>() {{
         add("Argyle Street");
         add("Cumberland Street");
@@ -101,6 +109,7 @@ public class Tracks {
         add("The Wharf");
         add("Under the Bridge");
     }};
+
     public static ArrayList<String> washingtonDC = new ArrayList<>() {{
         add("Capitol Thrill");
         add("Capitol Thrill 2");
@@ -111,6 +120,7 @@ public class Tracks {
         add("The Tour");
         add("Up and Over");
     }};
+
     public static ArrayList<String> yokohama = new ArrayList<>() {{
         add("Downtown");
         add("Honcho dori");

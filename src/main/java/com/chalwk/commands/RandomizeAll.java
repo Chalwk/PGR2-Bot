@@ -133,7 +133,7 @@ public class RandomizeAll implements CommandInterface {
         embed.setDescription("Here are your randomized settings:");
         embed.addField(vehicleClassLabel, randomVehicleClass, false);
         embed.addField(vehicleLabel, randomVehicle, false);
-        embed.addField(trackLabel, randomTrack, false);
+        embed.addField(trackLabel, randomTrack + " (" + tracks + ")", false);
         String timeLabel = "Time of Day:";
         embed.addField(timeLabel, randomTime, false);
         String weatherLabel = "Weather:";
