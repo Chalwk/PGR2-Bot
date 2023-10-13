@@ -67,6 +67,13 @@ public class RandomizeAll implements CommandInterface {
             case "all":
                 randomizeAll(event);
                 break;
+            case "time":
+                randomizeTime(event);
+                break;
+            break;
+            case "weather":
+                randomizeWeather(event);
+                break;
             default:
                 randomizeAll(event);
                 break;
@@ -105,6 +112,26 @@ public class RandomizeAll implements CommandInterface {
         embed.setTitle("PGR2  |  RANDOM TRACK:");
         embed.setColor(0x00FF00);
         embed.addField(trackLabel, randomTrack + " (" + tracks + ")", false);
+        event.replyEmbeds(embed.build()).queue();
+    }
+
+    private void randomizeTime(SlashCommandInteractionEvent event) {
+        String randomTime = timeOfDay.get((int) (Math.random() * timeOfDay.size()));
+        EmbedBuilder embed = new EmbedBuilder();
+        embed.setTitle("PGR2  |  RANDOM TIME:");
+        embed.setColor(0x00FF00);
+        String timeLabel = "Time of Day:";
+        embed.addField(timeLabel, randomTime, false);
+        event.replyEmbeds(embed.build()).queue();
+    }
+
+    private void randomizeWeather(SlashCommandInteractionEvent event) {
+        String randomWeather = weather.get((int) (Math.random() * weather.size()));
+        EmbedBuilder embed = new EmbedBuilder();
+        embed.setTitle("PGR2  |  RANDOM WEATHER:");
+        embed.setColor(0x00FF00);
+        String weatherLabel = "Weather:";
+        embed.addField(weatherLabel, randomWeather, false);
         event.replyEmbeds(embed.build()).queue();
     }
 
