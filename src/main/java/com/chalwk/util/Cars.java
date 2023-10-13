@@ -17,13 +17,6 @@ public class Cars {
         add("Dodge Viper SRT-10");
         add("Vauxhall VX220 Turbo");
         add("Lotus Exige");
-        add("Ascari KZ1");
-        add("Jaguar XJ220");
-        add("Porsche 911 GT2 (993)");
-        add("Ferrari F50");
-        add("Ferrari F40");
-        add("Porsche 959");
-        add("Ford GT40");
     }};
 
     public static ArrayList<String> compactSports = new ArrayList<>() {{
@@ -139,6 +132,16 @@ public class Cars {
         add("Bentley Continental GT");
     }};
 
+    public static ArrayList<String> extreme = new ArrayList<>() {{
+        add("Ascari KZ1");
+        add("Jaguar XJ220");
+        add("Porsche 911 GT2 (993)");
+        add("Ferrari F50");
+        add("Ferrari F40");
+        add("Porsche 959");
+        add("Ford GT40");
+    }};
+
     public static ArrayList<String> ultimate = new ArrayList<>() {{
         add("TVR Cebera Speed 12 *Platinum");
         add("Porsche 911 GT1 *Gold");
@@ -186,6 +189,7 @@ public class Cars {
         carsMap.put("Super Car", superCar);
         carsMap.put("Grand Touring", grandTouring);
         carsMap.put("Track Specials", trackSpecials);
+        carsMap.put("Extreme", extreme);
         carsMap.put("Ultimate", ultimate);
         carsMap.put("Paris Booster Pack", parisBoosterPack);
         carsMap.put("Long Beach Booster Pack", longBeachBoosterPack);
