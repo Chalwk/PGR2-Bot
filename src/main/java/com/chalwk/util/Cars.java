@@ -67,7 +67,7 @@ public class Cars {
         add("Mitsubishi 3000 GT VR4");
     }};
 
-    public static ArrayList<String> roaster = new ArrayList<>() {{
+    public static ArrayList<String> roadster = new ArrayList<>() {{
         add("AC 427 MKII");
         add("Renault Spider");
         add("Caterham 7 Classic");
@@ -182,7 +182,7 @@ public class Cars {
         carsMap.put("Coupe", coupe);
         carsMap.put("Sport Utility", sportUtility);
         carsMap.put("Pacific Muscle", pacificMuscle);
-        carsMap.put("Roadster", roaster);
+        carsMap.put("Roadster", roadster);
         carsMap.put("Classic", classic);
         carsMap.put("Sports Coupe", sportsCoupe);
         carsMap.put("American Muscle", americanMuscle);
