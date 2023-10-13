@@ -70,7 +70,6 @@ public class RandomizeAll implements CommandInterface {
             case "time":
                 randomizeTime(event);
                 break;
-            break;
             case "weather":
                 randomizeWeather(event);
                 break;
