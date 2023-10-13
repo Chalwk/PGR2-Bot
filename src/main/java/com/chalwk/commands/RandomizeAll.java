@@ -41,6 +41,8 @@ public class RandomizeAll implements CommandInterface {
         options.addChoice("class", "class");
         options.addChoice("vehicle", "vehicle");
         options.addChoice("track", "track");
+        options.addChoice("weather", "weather");
+        options.addChoice("time", "time");
         options.addChoice("all", "all");
 
         data.add(options);
