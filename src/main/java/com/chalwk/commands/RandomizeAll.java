@@ -123,8 +123,8 @@ public class RandomizeAll implements CommandInterface {
         String randomTime = timeOfDay.get((int) (Math.random() * timeOfDay.size()));
         String randomWeather = weather.get((int) (Math.random() * weather.size()));
 
-        if (randomTrack.equals("Paris") || randomTrack.equals("Long Beach")) {
-            randomWeather = "Sunny";
+        if (tracks.equals("Paris") || tracks.equals("Long Beach") || randomTime.equals("Night")) {
+            randomWeather = "Clear";
         }
 
         EmbedBuilder embed = new EmbedBuilder();
