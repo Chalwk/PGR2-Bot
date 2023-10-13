@@ -23,7 +23,7 @@ import static com.chalwk.util.Tracks.populateTracks;
 public class Main {
 
     public static ArrayList<String> weather = new ArrayList<>() {{
-        add("Sunny :sun_with_face:");
+        add("Clear :sun_with_face:");
         add("Rain :cloud_rain:");
         add("Overcast :cloud:");
     }};
