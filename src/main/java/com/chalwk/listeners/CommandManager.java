@@ -28,8 +28,8 @@ public class CommandManager extends ListenerAdapter {
     @Override
     public void onSlashCommandInteraction(@NotNull SlashCommandInteractionEvent event) {
         for (CommandInterface command : commands) {
-            String this_command = event.getName();
-            if (this_command.equals(command.getName())) {
+            String cmd = event.getName();
+            if (cmd.equals(command.getName())) {
                 try {
                     command.execute(event);
                 } catch (IOException e) {

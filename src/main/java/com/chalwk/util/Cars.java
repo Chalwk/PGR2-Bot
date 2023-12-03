@@ -143,7 +143,7 @@ public class Cars {
     }};
 
     public static ArrayList<String> ultimate = new ArrayList<>() {{
-        add("TVR Cebera Speed 12");
+        add("TVR Cerbera Speed 12");
         add("Porsche 911 GT1");
         add("Mercedes-Benz CLK-GTR");
         add("Pagani Zonda S");
@@ -155,7 +155,7 @@ public class Cars {
     }};
 
     public static ArrayList<String> parisBoosterPack = new ArrayList<>() {{
-        add("TVR Cebera Speed 12 (Live)");
+        add("TVR Cerbera Speed 12 (Live)");
         add("Ferrari 288 GTO");
         add("BMW 645Ci");
         add("Ferrari 365 GTS4");

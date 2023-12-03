@@ -71,7 +71,7 @@ Vauxhall VX220
 
 Classic
 
-Ferrari 250 GTO *Bronze
+Ferrari 250 GTO
 Lancia Stratos
 Ferrari Dino 246 GT
 Ferrari 275 GB
@@ -111,7 +111,7 @@ Pontiac GTO
 
 Super Car
 
-Delfino Feroce *Steel
+Delfino Feroce
 TVR Tuscan Speed 6
 Ferrari 360 Spider
 Ferrari 360 Modena
@@ -129,15 +129,11 @@ Lotus Esprit V8
 Aston Marton Vanquish
 Ferrari 575M Maranello
 Mercedes-Benz SL55 AMG
-Maserati 4200GT *Xbox Live
 Ferrari 550 Barchetta
 Ferrari Testarossa
 Bentley Continental GT
 
-========================================================================================================================
-========================================================================================================================
-========================================================================================================================
-========================================================================================================================
+
 
 Track Specials
 
@@ -148,6 +144,7 @@ Honda NSX Type-R (J)
 Dodge Viper SRT-10
 Vauxhall VX220 Turbo
 Lotus Exige
+
 
 Extreme
 Ascari KZ1
@@ -161,9 +158,9 @@ Ford GT40
 
 Ultimate
 
-TVR Cebera Speed 12 *Platinum
-Porsche 911 GT1 *Gold
-Mercedes-Benz CLK-GTR *Silver
+TVR Cerbera Speed 12
+Porsche 911 GT1
+Mercedes-Benz CLK-GTR
 Pagani Zonda S
 Enzo Ferrari
 Koenigsegg CC V8S
