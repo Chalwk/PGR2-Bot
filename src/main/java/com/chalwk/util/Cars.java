@@ -9,16 +9,6 @@ public class Cars {
 
     public static Map<String, ArrayList> carsMap = new HashMap<>();
 
-    public static ArrayList<String> trackSpecials = new ArrayList<>() {{
-        add("Ferrari Challenge Stradale");
-        add("Porsche 911 GT3 (996)");
-        add("Noble M12 GTO3");
-        add("Honda NSX Type-R (J)");
-        add("Dodge Viper SRT-10");
-        add("Vauxhall VX220 Turbo");
-        add("Lotus Exige");
-    }};
-
     public static ArrayList<String> compactSports = new ArrayList<>() {{
         add("Lancia Delta Integrale Evo");
         add("Volkswagen R32");
@@ -131,6 +121,17 @@ public class Cars {
         add("Ferrari Testarossa");
         add("Bentley Continental GT");
     }};
+
+    public static ArrayList<String> trackSpecials = new ArrayList<>() {{
+        add("Ferrari Challenge Stradale");
+        add("Porsche 911 GT3 (996)");
+        add("Noble M12 GTO3");
+        add("Honda NSX Type-R (J)");
+        add("Dodge Viper SRT-10");
+        add("Vauxhall VX220 Turbo");
+        add("Lotus Exige");
+    }};
+
 
     public static ArrayList<String> extreme = new ArrayList<>() {{
         add("Ascari KZ1");
