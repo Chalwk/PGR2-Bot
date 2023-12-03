@@ -151,8 +151,8 @@ public class RandomizeAll implements CommandInterface {
         String randomTime = timeOfDay.get((int) (Math.random() * timeOfDay.size()));
         String randomWeather = weather.get((int) (Math.random() * weather.size()));
 
-        if (tracks.equals("Paris") || tracks.equals("Long Beach") || randomTime.equals("Night")) {
-            randomWeather = "Clear";
+        if (tracks.equals("Paris") || tracks.equals("Long Beach") || randomTime.equals("Night :night_with_stars:")) {
+            randomWeather = "Clear :sun_with_face:";
         }
 
         EmbedBuilder embed = new EmbedBuilder();
