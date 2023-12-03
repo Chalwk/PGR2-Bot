@@ -101,14 +101,14 @@ public class Cars {
     }};
 
     public static ArrayList<String> superCar = new ArrayList<>() {{
-        add("Ferrari 355 F1");
-        add("Porsche 911 Turbo (996)");
-        add("Chevrolet Corvette Z06");
-        add("Dodge Viper GTS");
-        add("Ferrari 360 Modena");
-        add("Ferrari 360 Spider");
+        add("Delfino Feroce");
         add("TVR Tuscan Speed 6");
-        add("Delfino Feroce *Steel");
+        add("Ferrari 360 Spider");
+        add("Ferrari 360 Modena");
+        add("Dodge Viper GTS");
+        add("Chevrolet Corvette Z06");
+        add("Porsche 911 Turbo (996)");
+        add("Ferrari 355 F1");
     }};
 
     public static ArrayList<String> grandTouring = new ArrayList<>() {{
@@ -116,7 +116,6 @@ public class Cars {
         add("Aston Marton Vanquish");
         add("Ferrari 575M Maranello");
         add("Mercedes-Benz SL55 AMG");
-        add("Maserati 4200GT *Xbox Live");
         add("Ferrari 550 Barchetta");
         add("Ferrari Testarossa");
         add("Bentley Continental GT");
@@ -144,9 +143,9 @@ public class Cars {
     }};
 
     public static ArrayList<String> ultimate = new ArrayList<>() {{
-        add("TVR Cebera Speed 12 *Platinum");
-        add("Porsche 911 GT1 *Gold");
-        add("Mercedes-Benz CLK-GTR *Silver");
+        add("TVR Cebera Speed 12");
+        add("Porsche 911 GT1");
+        add("Mercedes-Benz CLK-GTR");
         add("Pagani Zonda S");
         add("Enzo Ferrari");
         add("Koenigsegg CC V8S");
