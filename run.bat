@@ -3,25 +3,29 @@
 :: Set current directory to the batch file's directory
 cd "%~dp0"
 
-:: Create log file
-echo ===========================>> run.log
-echo Starting bot...>> run.log
-date /t >> run.log
-time /t >> run.log
-echo ===========================>> run.log
+:: Get current timestamp
+for /f "tokens=2 delims==" %%I in ('wmic os get localdatetime /format:list') do set datetime=%%I
+set datetime=%datetime:~0,8%-%datetime:~8,6%
+
+:: Create log file with timestamp
+echo ===========================>> run_%datetime%.log
+echo Starting bot...>> run_%datetime%.log
+date /t >> run_%datetime%.log
+time /t >> run_%datetime%.log
+echo ===========================>> run_%datetime%.log
 
 :: Run Java JAR file
-start "PGR2" java -jar bot.jar 2>> run.log
+start "bot" java -jar PGR2-1.0-0.jar 2>> run_%datetime%.log
 
 :: Check for errors
 if %ERRORLEVEL% NEQ 0 (
-    echo ===========================>> run.log
-    echo Error: Failed to start bot!>> run.log
-    echo ===========================>> run.log
+    echo ===========================>> run_%datetime%.log
+    echo Error: Failed to start bot!>> run_%datetime%.log
+    echo ===========================>> run_%datetime%.log
     pause
     exit /b 1
 )
 
-echo ===========================>> run.log
-echo Bot started successfully!>> run.log
-echo ===========================>> run.log
+echo ===========================>> run_%datetime%.log
+echo Bot started successfully!>> run_%datetime%.log
+echo ===========================>> run_%datetime%.log
