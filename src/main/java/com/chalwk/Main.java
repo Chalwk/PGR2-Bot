@@ -1,71 +1,38 @@
-/* Copyright (c) 2023, PGR2-Bot. Jericho Crosby <jericho.crosby227@gmail.com> */
-
+/* Copyright (c) 2024 Jericho Crosby <jericho.crosby227@gmail.com>. Licensed under GNU General Public License v3.0.
+   See the LICENSE file or visit https://www.gnu.org/licenses/gpl-3.0.en.html for details. */
 package com.chalwk;
 
-import com.chalwk.commands.RandomizeAll;
-import com.chalwk.listeners.CommandManager;
-import com.chalwk.listeners.EventListeners;
-import net.dv8tion.jda.api.OnlineStatus;
-import net.dv8tion.jda.api.entities.Activity;
-import net.dv8tion.jda.api.requests.GatewayIntent;
-import net.dv8tion.jda.api.sharding.DefaultShardManagerBuilder;
-import net.dv8tion.jda.api.sharding.ShardManager;
-import org.jetbrains.annotations.NotNull;
+import com.chalwk.bot.BotInitializer;
 
-import javax.security.auth.login.LoginException;
 import java.io.IOException;
-import java.util.ArrayList;
 
-import static com.chalwk.util.Authentication.getToken;
-import static com.chalwk.util.Cars.populateCars;
-import static com.chalwk.util.Tracks.populateTracks;
-
+/**
+ * The main entry point of the Virtual Pets game project.
+ * This class initializes the bot using the BotInitializer class.
+ */
 public class Main {
 
-    public static ArrayList<String> weather = new ArrayList<>() {{
-        add("Clear :sun_with_face:");
-        add("Rain :cloud_rain:");
-        add("Overcast :cloud:");
-    }};
-    public static ArrayList<String> timeOfDay = new ArrayList<>() {{
-        add("Day :sunrise:");
-        add("Night :night_with_stars:");
-    }};
-    private ShardManager shardManager;
-
-    public Main() throws LoginException, IOException {
-        shardManager = buildBot();
-        populateCars();
-        populateTracks();
+    /**
+     * Initializes the bot by creating a BotInitializer instance and calling its initializeBot method.
+     *
+     * @throws IOException if there's an error reading the token or initializing the bot.
+     */
+    public static void initializeBot() throws IOException {
+        BotInitializer botInitializer = new BotInitializer();
+        botInitializer.initializeBot();
     }
 
+    /**
+     * The main method of the Virtual Pets game project.
+     * It calls the initializeBot method to start the bot initialization process.
+     *
+     * @param args The command-line arguments passed to the program.
+     */
     public static void main(String[] args) {
         try {
-            new Main();
-        } catch (LoginException | IOException e) {
-            System.out.println("Failed to start bot: " + e.getMessage());
+            initializeBot();
+        } catch (IOException e) {
+            System.err.println("Error reading token or initializing the bot: " + e.getMessage());
         }
-    }
-
-    @NotNull
-    private ShardManager buildBot() throws IOException {
-        String token = getToken();
-        DefaultShardManagerBuilder builder = DefaultShardManagerBuilder.createDefault(token);
-        builder.setStatus(OnlineStatus.ONLINE);
-        builder.setActivity(Activity.playing("PGR2"));
-        builder.enableIntents(GatewayIntent.GUILD_MEMBERS,
-                GatewayIntent.GUILD_MESSAGES,
-                GatewayIntent.GUILD_PRESENCES,
-                GatewayIntent.MESSAGE_CONTENT);
-
-        shardManager = builder.build();
-        shardManager.addEventListener(new EventListeners());
-
-        CommandManager manager = new CommandManager();
-        manager.add(new RandomizeAll());
-
-        shardManager.addEventListener(manager);
-
-        return shardManager;
     }
 }
