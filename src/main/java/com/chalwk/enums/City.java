@@ -23,9 +23,11 @@ public enum City {
     LONG_BEACH("Long Beach", createLongBeachTracks()),
     EDINBURGH("Edinburgh", createEdinburghTracks());
 
+    private final String name;
     private final List<String> tracks;
 
     City(String name, List<String> tracks) {
+        this.name = name;
         this.tracks = Collections.unmodifiableList(tracks);
     }
 
@@ -200,6 +202,10 @@ public enum City {
             add("Ocean Boulevard");
             add("Rainbow Lagoon");
         }};
+    }
+
+    public String getName() {
+        return name;
     }
 
     public List<String> getTracks() {

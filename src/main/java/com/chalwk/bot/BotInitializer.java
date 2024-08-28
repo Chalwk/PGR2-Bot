@@ -4,7 +4,6 @@
 package com.chalwk.bot;
 
 import com.chalwk.CommandManager.CommandListener;
-import com.chalwk.Listeners.EventListeners;
 import com.chalwk.commands.pgr2;
 import com.chalwk.util.authentication;
 import net.dv8tion.jda.api.OnlineStatus;
@@ -22,10 +21,6 @@ import java.io.IOException;
 public class BotInitializer {
 
     /**
-     * An instance of the PetDataHandler class to manage pet data.
-     */
-    public static ShardManager shardManager;
-    /**
      * The bot's authentication token.
      */
     private final String token;
@@ -39,14 +34,11 @@ public class BotInitializer {
         this.token = authentication.getToken();
     }
 
-    public static ShardManager getShardManager() {
-        return shardManager;
-    }
-
     /**
      * Initializes the bot and sets up event listeners and commands.
      */
     public void initializeBot() {
+        ShardManager shardManager;
         DefaultShardManagerBuilder builder = DefaultShardManagerBuilder.createDefault(this.token)
                 .setStatus(OnlineStatus.ONLINE)
                 .setActivity(Activity.playing("PGR2"))
@@ -57,7 +49,6 @@ public class BotInitializer {
                         GatewayIntent.MESSAGE_CONTENT);
 
         shardManager = builder.build();
-        shardManager.addEventListener(new EventListeners());
         registerCommands(shardManager);
     }
 

@@ -12,18 +12,33 @@ import net.dv8tion.jda.api.EmbedBuilder;
 import java.util.List;
 import java.util.Random;
 
+/**
+ * A utility class for generating random game elements in PGR2 Discord Bot.
+ */
 public class RandomGenerator {
 
+    /**
+     * Generates a random vehicle class and sets it as a field in the provided embed.
+     *
+     * @param embed the {@link EmbedBuilder} instance to add the field
+     * @return the modified {@link EmbedBuilder} instance with the new field
+     */
     public EmbedBuilder randomizeVehicleClass(EmbedBuilder embed) {
         Random random = new Random();
         CarCategory randomCategory = CarCategory.values()[random.nextInt(CarCategory.values().length)];
 
         embed.setTitle("PGR2 🏎️ |  RANDOM CLASS 🎲:");
-        embed.addField("🛠️ Vehicle Class:", randomCategory.name(), false);
+        embed.addField("Vehicle Class:", "- " + randomCategory.getName(), true);
 
         return embed;
     }
 
+    /**
+     * Generates a random vehicle and sets it as a field in the provided embed.
+     *
+     * @param embed the {@link EmbedBuilder} instance to add the field
+     * @return the modified {@link EmbedBuilder} instance with the new field
+     */
     public EmbedBuilder randomizeVehicle(EmbedBuilder embed) {
         Random random = new Random();
         CarCategory randomCategory = CarCategory.values()[random.nextInt(CarCategory.values().length)];
@@ -32,11 +47,17 @@ public class RandomGenerator {
         String randomCar = cars.get(randomCarIndex);
 
         embed.setTitle("PGR2 🏎️ |  RANDOM VEHICLE 🚗:");
-        embed.addField(" Vehicle:", randomCar, false);
+        embed.addField("Vehicle:", "- " + randomCar, true);
 
         return embed;
     }
 
+    /**
+     * Generates a random track and sets it as a field in the provided embed.
+     *
+     * @param embed the {@link EmbedBuilder} instance to add the field
+     * @return the modified {@link EmbedBuilder} instance with the new field
+     */
     public EmbedBuilder randomizeTrack(EmbedBuilder embed) {
         City randomCity = City.values()[new Random().nextInt(City.values().length)];
         List<String> tracks = randomCity.getTracks();
@@ -46,60 +67,74 @@ public class RandomGenerator {
         String randomTrack = tracks.get(randomTrackIndex);
 
         embed.setTitle("PGR2 🏎️ |  RANDOM TRACK 🛣️:");
-        embed.addField(" City:", randomCity.name(), false);
-        embed.addField(" Track:", randomTrack, false);
+        embed.addField("City:", "- " + randomCity.getName(), true); // Use name() method to get the city name
+        embed.addField("Track:", "- " + randomTrack, true);
 
         return embed;
     }
 
+    /**
+     * Generates a random time of day and sets it as a field in the provided embed.
+     *
+     * @param embed the {@link EmbedBuilder} instance to add the field
+     * @return the modified {@link EmbedBuilder} instance with the new field
+     */
     public EmbedBuilder randomizeTimeOfDay(EmbedBuilder embed) {
         TimeOfDay randomTimeOfDay = TimeOfDay.values()[new Random().nextInt(TimeOfDay.values().length)];
 
         embed.setTitle("PGR2 🏎️ |  RANDOM TIME OF DAY ⏳:");
-        embed.addField(" Time of Day:", randomTimeOfDay.getDisplayText(), false);
+        embed.addField("Time of Day:", "- " + randomTimeOfDay.getDisplayText(), true);
 
         return embed;
     }
 
+    /**
+     * Generates a random weather condition and sets it as a field in the provided embed.
+     *
+     * @param embed the {@link EmbedBuilder} instance to add the field
+     * @return the modified {@link EmbedBuilder} instance with the new field
+     */
     public EmbedBuilder randomizeWeather(EmbedBuilder embed) {
         Weather randomWeather = Weather.values()[new Random().nextInt(Weather.values().length)];
 
         embed.setTitle("PGR2 🏎️ |  RANDOM WEATHER ⛅️:");
-        embed.addField(" Weather:", randomWeather.getDisplayText(), false);
+        embed.addField("Weather:", "- " + randomWeather.getDisplayText(), true);
 
         return embed;
     }
 
+    /**
+     * Generates random values for city, track, time of day, and weather, and sets them as fields in the provided embed.
+     *
+     * @param embed the {@link EmbedBuilder} instance to add the fields
+     * @return the modified {@link EmbedBuilder} instance with the new fields
+     */
     public EmbedBuilder randomizeAll(EmbedBuilder embed) {
-        // City and track
+
         City randomCity = City.values()[new Random().nextInt(City.values().length)];
         List<String> tracks = randomCity.getTracks();
         int randomTrackIndex = new Random().nextInt(tracks.size());
         String randomTrack = tracks.get(randomTrackIndex);
 
-        // Time of day
         TimeOfDay randomTimeOfDay = TimeOfDay.values()[new Random().nextInt(TimeOfDay.values().length)];
 
-        // Conditional check for Paris or Long Beach
         boolean isParisOrLongBeach = randomCity == City.PARIS || randomCity == City.LONG_BEACH;
-
-        // Conditional check for nighttime
         boolean isNightTime = randomTimeOfDay == TimeOfDay.NIGHT;
 
-        // Weather
         Weather randomWeather;
+
         if (isParisOrLongBeach || isNightTime) {
-            // Force clear weather if it's Paris/Long Beach or night
             randomWeather = Weather.CLEAR;
+            randomTimeOfDay = TimeOfDay.DAY;
         } else {
             randomWeather = Weather.values()[new Random().nextInt(Weather.values().length)];
         }
 
-        embed.setTitle("PGR2 🏎️ |  RANDOM ALL 🎲:");
-        embed.addField(" City:", randomCity.name(), false);
-        embed.addField(" Track:", randomTrack, false);
-        embed.addField(" Time of Day:", randomTimeOfDay.getDisplayText(), false);
-        embed.addField(" Weather:", randomWeather.getDisplayText(), false);
+        embed.setTitle("RANDOMIZE ALL ELEMENTS:");
+        embed.addField(" City:", "- " + randomCity.getName(), true);
+        embed.addField(" Track:", "- " + randomTrack, true);
+        embed.addField(" Time of Day:", "- " + randomTimeOfDay.getDisplayText(), true);
+        embed.addField(" Weather:", "- " + randomWeather.getDisplayText(), true);
 
         return embed;
     }

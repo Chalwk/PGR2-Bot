@@ -8,27 +8,33 @@ import java.util.List;
 
 public enum CarCategory {
 
-    COMPACT_SPORTS(createCompactSportsCars()),
-    SPORTS_CONVERTIBLE(createSportsConvertibleCars()),
-    COUPE(createCoupeCars()),
-    SPORT_UTILITY(createSportUtilityCars()),
-    PACIFIC_MUSCLE(createPacificMuscleCars()),
-    ROADSTER(createRoadsterCars()),
-    CLASSIC(createClassicCars()),
-    SPORTS_COUPE(createSportsCoupeCars()),
-    AMERICAN_MUSCLE(createAmericanMuscleCars()),
-    SUPER_CAR(createSuperCarCars()),
-    GRAND_TOURING(createGrandTouringCars()),
-    TRACK_SPECIALS(createTrackSpecialsCars()),
-    EXTREME(createExtremeCars()),
-    ULTIMATE(createUltimateCars()),
-    PARIS_BOOSTER_PACK(createParisBoosterPackCars()),
-    LONG_BEACH_BOOSTER_PACK(createLongBeachBoosterPackCars());
+    COMPACT_SPORTS("Compact Sports", createCompactSportsCars()),
+    SPORTS_CONVERTIBLE("Sports Convertible", createSportsConvertibleCars()),
+    COUPE("Coupe", createCoupeCars()),
+    SPORT_UTILITY("Sport Utility", createSportUtilityCars()),
+    PACIFIC_MUSCLE("Pacific Muscle", createPacificMuscleCars()),
+    ROADSTER("Roadster", createRoadsterCars()),
+    CLASSIC("Classic", createClassicCars()),
+    SPORTS_COUPE("Sports Coupe", createSportsCoupeCars()),
+    AMERICAN_MUSCLE("American Muscle", createAmericanMuscleCars()),
+    SUPER_CAR("Super Car", createSuperCarCars()),
+    GRAND_TOURING("Grand Touring", createGrandTouringCars()),
+    TRACK_SPECIALS("Track Specials", createTrackSpecialsCars()),
+    EXTREME("Extreme", createExtremeCars()),
+    ULTIMATE("Ultimate", createUltimateCars()),
+    PARIS_BOOSTER_PACK("Paris Booster Pack", createParisBoosterPackCars()),
+    LONG_BEACH_BOOSTER_PACK("Long Beach Booster Pack", createLongBeachBoosterPackCars());
 
+    private final String name;
     private final List<String> cars;
 
-    CarCategory(List<String> cars) {
+    CarCategory(String name, List<String> cars) {
+        this.name = name;
         this.cars = cars;
+    }
+
+    public String getName() {
+        return name;
     }
 
     private static List<String> createCompactSportsCars() {

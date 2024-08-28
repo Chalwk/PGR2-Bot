@@ -12,20 +12,19 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * A listener class for registering and handling commands in the Virtual Pets game project.
- * It extends JDA's ListenerAdapter class and overrides its methods to manage command execution.
+ * A command listener that manages and executes {@link CommandInterface} commands.
  */
 public class CommandListener extends ListenerAdapter {
 
     /**
-     * A list of CommandInterface implementations representing available commands.
+     * A list of command objects implementing {@link CommandInterface}.
      */
     private final List<CommandInterface> commands = new ArrayList<>();
 
     /**
-     * Registers all available commands in all guilds upon JDA's ready event.
+     * Registers all command objects in every Guild.
      *
-     * @param event The ReadyEvent object containing JDA's initialization details.
+     * @param event the {@link ReadyEvent} triggered when JDA is ready
      */
     @Override
     public void onReady(ReadyEvent event) {
@@ -37,10 +36,9 @@ public class CommandListener extends ListenerAdapter {
     }
 
     /**
-     * Executes the appropriate command based on the given slash command interaction event.
+     * Handles slash command interactions by executing the corresponding {@link CommandInterface}.
      *
-     * @param event The SlashCommandInteractionEvent object containing command event details.
-     * @throws IOException if an error occurs during command execution.
+     * @param event the {@link SlashCommandInteractionEvent} triggered when a slash command is used
      */
     @Override
     public void onSlashCommandInteraction(SlashCommandInteractionEvent event) {
@@ -58,9 +56,9 @@ public class CommandListener extends ListenerAdapter {
     }
 
     /**
-     * Adds a new command to the list of available commands.
+     * Adds a command object to the list of managed commands.
      *
-     * @param command The CommandInterface instance representing the new command.
+     * @param command the {@link CommandInterface} command to add
      */
     public void add(CommandInterface command) {
         commands.add(command);

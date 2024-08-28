@@ -65,7 +65,6 @@ public class pgr2 implements CommandInterface {
         };
 
         embed.setColor(0x00FF00);
-        embed.setFooter("PGR2 bot by Jericho Crosby (Chalwk) 🤖", "https://github.com/Chalwk77/PGR2-Bot");
         event.replyEmbeds(embed.build()).queue();
 
         COOLDOWN_MANAGER.setCooldown(getName(), event.getUser());

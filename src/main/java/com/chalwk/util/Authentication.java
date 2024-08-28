@@ -7,17 +7,15 @@ import java.io.FileReader;
 import java.io.IOException;
 
 /**
- * A utility class for handling the bot authentication process, specifically for reading
- * the authentication token from a file.
+ * A utility class for handling authentication token retrieval.
  */
 public class authentication {
 
     /**
-     * Retrieves the authentication token from a file named "auth.token" for the bot to connect
-     * to the Discord server.
+     * Reads the authentication token from the "auth.token" file.
      *
-     * @return The authentication token as a String.
-     * @throws IOException if an error occurs while reading the file.
+     * @return the authentication token as a {@link String}
+     * @throws IOException if an I/O error occurs while reading the token
      */
     public static String getToken() throws IOException {
         try (BufferedReader text = new BufferedReader(new FileReader("auth.token"))) {
