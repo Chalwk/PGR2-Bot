@@ -117,19 +117,20 @@ public class RandomGenerator {
         String randomTrack = tracks.get(randomTrackIndex);
 
         TimeOfDay randomTimeOfDay = TimeOfDay.values()[0];
-        boolean isParisOrLongBeach = randomCity == City.PARIS || randomCity == City.LONG_BEACH;
         boolean isNightTime = randomTimeOfDay == TimeOfDay.NIGHT;
 
         Weather randomWeather;
 
-        if (isParisOrLongBeach) {
+        if (randomCity == City.PARIS || randomCity == City.LONG_BEACH) {
             randomTimeOfDay = TimeOfDay.DAY;
             randomWeather = Weather.CLEAR;
-        } else if (isNightTime) {
-            randomWeather = Weather.CLEAR;
         } else {
-            randomTimeOfDay = TimeOfDay.values()[new Random().nextInt(TimeOfDay.values().length)];
-            randomWeather = Weather.values()[new Random().nextInt(Weather.values().length)];
+            if (isNightTime) {
+                randomWeather = Weather.CLEAR;
+            } else {
+                randomTimeOfDay = TimeOfDay.values()[new Random().nextInt(TimeOfDay.values().length)];
+                randomWeather = Weather.values()[new Random().nextInt(Weather.values().length)];
+            }
         }
 
         embed.setTitle("RANDOMIZE ALL ELEMENTS:");
