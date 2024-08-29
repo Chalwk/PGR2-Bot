@@ -67,7 +67,7 @@ public class RandomGenerator {
         String randomTrack = tracks.get(randomTrackIndex);
 
         embed.setTitle("PGR2 🏎️ |  RANDOM TRACK 🛣️:");
-        embed.addField("City:", "- " + randomCity.getName(), true); // Use name() method to get the city name
+        embed.addField("City:", "- " + randomCity.getName(), true);
         embed.addField("Track:", "- " + randomTrack, true);
 
         return embed;
@@ -116,7 +116,7 @@ public class RandomGenerator {
         int randomTrackIndex = new Random().nextInt(tracks.size());
         String randomTrack = tracks.get(randomTrackIndex);
 
-        TimeOfDay randomTimeOfDay = TimeOfDay.values()[0]; // Default initialization
+        TimeOfDay randomTimeOfDay = TimeOfDay.values()[0];
         boolean isParisOrLongBeach = randomCity == City.PARIS || randomCity == City.LONG_BEACH;
         boolean isNightTime = randomTimeOfDay == TimeOfDay.NIGHT;
 
