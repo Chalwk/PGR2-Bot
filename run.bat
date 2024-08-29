@@ -15,7 +15,7 @@ time /t >> run_%datetime%.log
 echo ===========================>> run_%datetime%.log
 
 :: Run Java JAR file
-start "bot" java -jar PGR2-1.0-0.jar 2>> run_%datetime%.log
+start "bot" java -jar PGR2-1.0.0.jar 2>> run_%datetime%.log
 
 :: Check for errors
 if %ERRORLEVEL% NEQ 0 (

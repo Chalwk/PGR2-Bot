@@ -6,7 +6,7 @@
 
     <groupId>com.chalwk.Main</groupId>
     <artifactId>PGR2</artifactId>
-    <version>1.0-0</version>
+    <version>1.0.0</version>
 
     <name>PGR2-Bot</name>
     <description>Settings randomizer for Game Project Gotham Racing 2</description>

@@ -19,19 +19,22 @@ exciting and unique challenges.
 Before installing the PGR2 Bot, ensure you have the following prerequisites:
 
 1. Java 17 installed:
-  - Windows users: Download Java 17 from the Oracle website.
-  - Linux users: Run `sudo apt install openjdk-17-jre-headless` in your terminal.
+
+- Windows users: Download Java 17 from the Oracle website.
+- Linux users: Run `sudo apt install openjdk-17-jre-headless` in your terminal.
+
 2. Obtain a **bot token** from the [Discord Developer Portal](https://discord.com/developers/applications) by following
    these steps:
-  - Create a new application and provide a name for your bot.
-  - Navigate to the **Bot** tab on the left-hand menu and set your bot's username and profile picture.
-  - Reset your token, copy it, and paste it into the ./PGR2-Bot/auth.token file. Keep this token private.
-  - Enable **Presence Intent**, **Server Members Intent**, and **Message Content Intent** under **Privileged Gateway
-    Intents**.
-  - Under the **OAuth2** tab, use the **OAuth2 URL Generator** with the **bot** scope and **Administrator** Bot
-    Permissions to generate a URL.
-  - Paste the URL into your browser and select the server you want to add the bot to.
-  - Complete the captcha and click **Authorize** to add the bot to your Discord server.
+
+- Create a new application and provide a name for your bot.
+- Navigate to the **Bot** tab on the left-hand menu and set your bot's username and profile picture.
+- Reset your token, copy it, and paste it into the ./PGR2-Bot/auth.token file. Keep this token private.
+- Enable **Presence Intent**, **Server Members Intent**, and **Message Content Intent** under **Privileged Gateway
+  Intents**.
+- Under the **OAuth2** tab, use the **OAuth2 URL Generator** with the **bot** scope and **Administrator** Bot
+  Permissions to generate a URL.
+- Paste the URL into your browser and select the server to which you want to add the bot.
+- Complete the captcha and click **Authorize** to add the bot to your Discord server.
 
 # Running the Bot:
 

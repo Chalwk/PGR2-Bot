@@ -33,10 +33,6 @@ public enum CarCategory {
         this.cars = cars;
     }
 
-    public String getName() {
-        return name;
-    }
-
     private static List<String> createCompactSportsCars() {
         return new ArrayList<>() {{
             add("Lancia Delta Integrale Evo");
@@ -233,6 +229,10 @@ public enum CarCategory {
             add("Ariel Atom 2");
             add("Subaru Impreza 22B STi");
         }};
+    }
+
+    public String getName() {
+        return name;
     }
 
     public List<String> getCars() {

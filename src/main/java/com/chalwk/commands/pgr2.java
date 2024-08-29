@@ -35,12 +35,12 @@ public class pgr2 implements CommandInterface {
         OptionData options = new OptionData(OptionType.STRING, "options", "Generate a random vehicle, vehicle class, track, time of day, and weather")
 
                 .setRequired(true)
-                .addChoice("Generate a random class.", "class")
-                .addChoice("Generate a random vehicle.", "vehicle")
-                .addChoice("Generate a random track.", "track")
-                .addChoice("Generate a random time of day.", "time")
-                .addChoice("Generate random weather.", "weather")
-                .addChoice("Generate all random elements.", "all");
+                .addChoice("class", "class")
+                .addChoice("vehicle", "vehicle")
+                .addChoice("track", "track")
+                .addChoice("time", "time")
+                .addChoice("weather", "weather")
+                .addChoice("all", "all");
 
         data.add(options);
         return data;
@@ -48,12 +48,13 @@ public class pgr2 implements CommandInterface {
 
     @Override
     public void execute(SlashCommandInteractionEvent event) {
-        if (COOLDOWN_MANAGER.isOnCooldown(event)) return;
+        //if (COOLDOWN_MANAGER.isOnCooldown(event)) return;
 
         EmbedBuilder embed = new EmbedBuilder();
         RandomGenerator randomGenerator = new RandomGenerator();
 
         OptionMapping option = event.getOption("options");
+        assert option != null;
         embed = switch (option.getAsString()) {
             case "class" -> randomGenerator.randomizeVehicleClass(embed);
             case "vehicle" -> randomGenerator.randomizeVehicle(embed);
@@ -67,6 +68,6 @@ public class pgr2 implements CommandInterface {
         embed.setColor(0x00FF00);
         event.replyEmbeds(embed.build()).queue();
 
-        COOLDOWN_MANAGER.setCooldown(getName(), event.getUser());
+        //COOLDOWN_MANAGER.setCooldown(getName(), event.getUser());
     }
 }
