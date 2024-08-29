@@ -116,13 +116,16 @@ public class RandomGenerator {
         int randomTrackIndex = new Random().nextInt(tracks.size());
         String randomTrack = tracks.get(randomTrackIndex);
 
-        Weather randomWeather;
-        TimeOfDay randomTimeOfDay;
-
+        TimeOfDay randomTimeOfDay = TimeOfDay.values()[0]; // Default initialization
         boolean isParisOrLongBeach = randomCity == City.PARIS || randomCity == City.LONG_BEACH;
+        boolean isNightTime = randomTimeOfDay == TimeOfDay.NIGHT;
+
+        Weather randomWeather;
 
         if (isParisOrLongBeach) {
             randomTimeOfDay = TimeOfDay.DAY;
+            randomWeather = Weather.CLEAR;
+        } else if (isNightTime) {
             randomWeather = Weather.CLEAR;
         } else {
             randomTimeOfDay = TimeOfDay.values()[new Random().nextInt(TimeOfDay.values().length)];
