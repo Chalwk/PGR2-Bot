@@ -111,26 +111,25 @@ public class RandomGenerator {
      */
     public EmbedBuilder randomizeAll(EmbedBuilder embed) {
 
-        City randomCity = City.values()[new Random().nextInt(City.values().length)];
+        Random random = new Random();
+        City randomCity = City.values()[random.nextInt(City.values().length)];
         List<String> tracks = randomCity.getTracks();
-        int randomTrackIndex = new Random().nextInt(tracks.size());
+        int randomTrackIndex = random.nextInt(tracks.size());
         String randomTrack = tracks.get(randomTrackIndex);
 
-        TimeOfDay randomTimeOfDay = TimeOfDay.values()[0];
-        boolean isNightTime = randomTimeOfDay == TimeOfDay.NIGHT;
-
+        TimeOfDay randomTimeOfDay;
         Weather randomWeather;
 
         if (randomCity == City.PARIS || randomCity == City.LONG_BEACH) {
             randomTimeOfDay = TimeOfDay.DAY;
+        } else {
+            randomTimeOfDay = TimeOfDay.values()[random.nextInt(TimeOfDay.values().length)];
+        }
+
+        if (randomTimeOfDay == TimeOfDay.NIGHT) {
             randomWeather = Weather.CLEAR;
         } else {
-            if (isNightTime) {
-                randomWeather = Weather.CLEAR;
-            } else {
-                randomTimeOfDay = TimeOfDay.values()[new Random().nextInt(TimeOfDay.values().length)];
-                randomWeather = Weather.values()[new Random().nextInt(Weather.values().length)];
-            }
+            randomWeather = Weather.values()[random.nextInt(Weather.values().length)];
         }
 
         embed.setTitle("RANDOMIZE ALL ELEMENTS:");
