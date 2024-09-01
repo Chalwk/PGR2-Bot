@@ -59,10 +59,10 @@ public class RandomGenerator {
      * @return the modified {@link EmbedBuilder} instance with the new field
      */
     public EmbedBuilder randomizeTrack(EmbedBuilder embed) {
-        City randomCity = City.values()[new Random().nextInt(City.values().length)];
+        Random random = new Random();
+        City randomCity = City.values()[random.nextInt(City.values().length)];
         List<String> tracks = randomCity.getTracks();
 
-        Random random = new Random();
         int randomTrackIndex = random.nextInt(tracks.size());
         String randomTrack = tracks.get(randomTrackIndex);
 
@@ -117,6 +117,11 @@ public class RandomGenerator {
         int randomTrackIndex = random.nextInt(tracks.size());
         String randomTrack = tracks.get(randomTrackIndex);
 
+        CarCategory randomCategory = CarCategory.values()[random.nextInt(CarCategory.values().length)];
+        List<String> cars = randomCategory.getCars();
+        int randomCarIndex = random.nextInt(cars.size());
+        String randomCar = cars.get(randomCarIndex);
+
         TimeOfDay randomTimeOfDay;
         Weather randomWeather;
 
@@ -135,6 +140,7 @@ public class RandomGenerator {
         embed.setTitle("RANDOMIZE ALL ELEMENTS:");
         embed.addField(" City:", "- " + randomCity.getName(), true);
         embed.addField(" Track:", "- " + randomTrack, true);
+        embed.addField(" Car:", "- " + randomCar, true);
         embed.addField(" Time of Day:", "- " + randomTimeOfDay.getDisplayText(), true);
         embed.addField(" Weather:", "- " + randomWeather.getDisplayText(), true);
 
