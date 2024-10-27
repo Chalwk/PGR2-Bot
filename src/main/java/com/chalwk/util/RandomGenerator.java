@@ -105,7 +105,6 @@ public class RandomGenerator {
         City randomCity = getRandomEnum(City.class);
         String randomTrack = getRandomElement(randomCity.getTracks());
         CarCategory randomCategory = getRandomEnum(CarCategory.class);
-        String randomCar = getRandomElement(randomCategory.getCars());
 
         TimeOfDay randomTimeOfDay = (randomCity == City.PARIS || randomCity == City.LONG_BEACH) ?
                 TimeOfDay.DAY : getRandomEnum(TimeOfDay.class);
@@ -117,7 +116,7 @@ public class RandomGenerator {
                 .setColor(0x1F8B4C)
                 .addField("**City:**", randomCity.getName(), true)
                 .addField("**Track:**", randomTrack, true)
-                .addField("**Car:**", randomCar, true)
+                .addField("**Vehicle Class:**", randomCategory.getName(), true)
                 .addField("**Time of Day:**", randomTimeOfDay.getDisplayText(), true)
                 .addField("**Weather:**", randomWeather.getDisplayText(), true);
         return embed;

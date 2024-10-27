@@ -29,8 +29,8 @@ public class pgr2 implements CommandInterface {
 
     @Override
     public List<OptionData> getOptions() {
-
         List<OptionData> data = new ArrayList<>();
+
         OptionData options = new OptionData(OptionType.STRING, "options", "Select what to randomize")
                 .setRequired(true)
                 .addChoice("class", "class")

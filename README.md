@@ -44,3 +44,16 @@ To start using the PGR2 Bot on your server, follow the steps below:
 - Linux users: Run the run.sh file.
 
 - Enjoy challenging yourself and other PGR2 fans with the randomized game settings provided by the PGR2 Bot!
+
+Future commands:
+/pgr2 submit-time [time] [track] [class]
+
+Validation and Formatting:
+
+Enforce a time format, like mm:ss.sss or hh:mm:ss, to make the entries consistent.
+For easy filtering, each track and class could have preset names or codes to avoid typos (e.g., /pgr2 submit-time 02:
+35.678 Tokyo Class-C).
+Leaderboard Display:
+
+Add /pgr2 leaderboard [track] [class] command to retrieve the top 10 times on a specific track and class. This way,
+players can see who holds the current record.
