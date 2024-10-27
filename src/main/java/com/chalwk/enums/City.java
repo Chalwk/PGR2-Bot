@@ -3,205 +3,148 @@
 
 package com.chalwk.enums;
 
-import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 public enum City {
 
-    BARCELONA("Barcelona", createBarcelonaTracks()),
-    CHICAGO("Chicago", createChicagoTracks()),
-    FLORENCE("Florence", createFlorenceTracks()),
-    HONGKONG("Hong Kong", createHongKongTracks()),
-    NURBURGRING("Nurburgring", createNurburgringTracks()),
-    SYDNEY("Sydney", createSydneyTracks()),
-    WASHINGTON_DC("Washington DC", createWashingtonDCTracks()),
-    MOSCOW("Moscow", createMoscowTracks()),
-    STOCKHOLM("Stockholm", createStockholmTracks()),
-    YOKOHAMA("Yokohama", createYokohamaTracks()),
-    PARIS("Paris", createParisTracks()),
-    LONG_BEACH("Long Beach", createLongBeachTracks()),
-    EDINBURGH("Edinburgh", createEdinburghTracks());
+    BARCELONA("Barcelona", List.of(
+            "Barri Gotic",
+            "Catalan Challenge",
+            "Catedral",
+            "Las Ramblas",
+            "Passeig de Colom",
+            "Place de Jaume")),
+
+    CHICAGO("Chicago", List.of(
+            "Chicago River Tour",
+            "East Kinzie Crossover",
+            "East On Wacker",
+            "In The Loop",
+            "Lower Wacker Run",
+            "North Wabash Overpass",
+            "River Crossing",
+            "The Miracle Mile",
+            "Wells & Lake",
+            "West On Wacker")),
+
+    EDINBURGH("Edinburgh", List.of(
+            "Castle Eight",
+            "Grassmarket East",
+            "Grassmarket Eight",
+            "Grassmarket West",
+            "Lothian Road Eight Long",
+            "Lothian Road Eight",
+            "Princess Street East",
+            "Princess Street Long",
+            "Princess Street Loop",
+            "Terrace Sprint")),
+
+    FLORENCE("Florence", List.of(
+            "Arno",
+            "Arno 2",
+            "Battistero 1",
+            "Battistero 2",
+            "Duomo 1",
+            "Duomo 2",
+            "Piazza della Repubblica",
+            "Piazza della Signoria 1",
+            "Piazza della Signoria 2",
+            "Ponte Vecchio",
+            "Uffizi")),
+
+    HONGKONG("Hong Kong", List.of(
+            "Admiralty",
+            "Cotton Tree Drive",
+            "Harbour Run",
+            "Harcourt Challenge",
+            "Hennessy Road",
+            "The Convention Centres",
+            "The Waterfront",
+            "Wan Chai Run")),
+
+    MOSCOW("Moscow", List.of(
+            "KGB Corner",
+            "Kremlin 1",
+            "Kremlin 2",
+            "Lenin",
+            "Red Square 1",
+            "Red Square 2",
+            "St. Basil's Circle")),
+
+    NURBURGRING("Nurburgring", List.of("Nürburgring")),
+
+    STOCKHOLM("Stockholm", List.of(
+            "Bridges",
+            "Gamla Island Hopping",
+            "Gamla Oval",
+            "Gamla Stan Loop",
+            "Island Hop",
+            "Northern",
+            "Northern 2",
+            "Northern 3",
+            "Round the Riksdagshuset",
+            "Speed Freak")),
+
+    SYDNEY("Sydney", List.of(
+            "Argyle Street",
+            "Cumberland Street",
+            "Dawes Point Loop",
+            "Downtown Short",
+            "George St. Challenge",
+            "Harbour Bridge",
+            "Hickson Run",
+            "Opera House View",
+            "Sydney Harbour",
+            "The Rocks Route",
+            "The Wharf",
+            "Under the Bridge")),
+
+    WASHINGTON_DC("Washington DC", List.of(
+            "Capitol Thrill",
+            "Capitol Thrill 2",
+            "Northside Slide",
+            "Ring Race",
+            "Square Dancin'",
+            "The Tour",
+            "Up and Over")),
+
+    YOKOHAMA("Yokohama", List.of(
+            "Downtown",
+            "Honcho dori",
+            "Kishamichi",
+            "Minato Mirai",
+            "Sakuragicho",
+            "Seaside Loop",
+            "Shinko Park",
+            "Warehouse Loop",
+            "Yokohama Bay Tour",
+            "Yokohama Challenge")),
+
+    PARIS("Paris", List.of(
+            "Avenue D'lena",
+            "Circuit Interieur",
+            "Elysees Challenge",
+            "L'Arc de Triomphe",
+            "Le Circuit Comple",
+            "Les Deux Ponts",
+            "Les Monuments Celebres")),
+
+    LONG_BEACH("Long Beach", List.of(
+            "Aquarium",
+            "CC Circular",
+            "Coastal Run",
+            "Dolphin Loop",
+            "LBC (Long Beach City)",
+            "Long Beach Challenge",
+            "Ocean Boulevard",
+            "Rainbow Lagoon"));
 
     private final String name;
     private final List<String> tracks;
 
     City(String name, List<String> tracks) {
         this.name = name;
-        this.tracks = Collections.unmodifiableList(tracks);
-    }
-
-    private static List<String> createBarcelonaTracks() {
-        return new ArrayList<>() {{
-            add("Barri Gotic");
-            add("Catalan Challenge");
-            add("Catedral");
-            add("Las Ramblas");
-            add("Passeig de Colom");
-            add("Place de Jaume");
-        }};
-    }
-
-    private static List<String> createChicagoTracks() {
-        return new ArrayList<>() {{
-            add("Chicago River Tour");
-            add("East Kinzie Crossover");
-            add("East On Wacker");
-            add("In The Loop");
-            add("Lower Wacker Run");
-            add("North Wabash Overpass");
-            add("River Crossing");
-            add("The Miracle Mile");
-            add("Wells & Lake");
-            add("West On Wacker");
-        }};
-    }
-
-    private static List<String> createEdinburghTracks() {
-        return new ArrayList<>() {{
-            add("Castle Eight");
-            add("Grassmarket East");
-            add("Grassmarket Eight");
-            add("Grassmarket West");
-            add("Lothian Road Eight Long");
-            add("Lothian Road Eight");
-            add("Princess Street East");
-            add("Princess Street Long");
-            add("Princess Street Loop");
-            add("Terrace Sprint");
-        }};
-    }
-
-    private static List<String> createFlorenceTracks() {
-        return new ArrayList<>() {{
-            add("Arno");
-            add("Arno 2");
-            add("Battistero 1");
-            add("Battistero 2");
-            add("Duomo 1");
-            add("Duomo 2");
-            add("Piazza della Repubblica");
-            add("Piazza della Signoria 1");
-            add("Piazza della Signoria 2");
-            add("Ponte Vecchio");
-            add("Uffizi");
-        }};
-    }
-
-    private static List<String> createHongKongTracks() {
-        return new ArrayList<>() {{
-            add("Admiralty");
-            add("Cotton Tree Drive");
-            add("Harbour Run");
-            add("Harcourt Challenge");
-            add("Hennessy Road");
-            add("The Convention Centres");
-            add("The Waterfront");
-            add("Wan Chai Run");
-        }};
-    }
-
-    private static List<String> createMoscowTracks() {
-        return new ArrayList<>() {{
-            add("KGB Corner");
-            add("Kremlin 1");
-            add("Kremlin 2");
-            add("Lenin");
-            add("Red Square 1");
-            add("Red Square 2");
-            add("St. Basil's Circle");
-        }};
-    }
-
-    private static List<String> createNurburgringTracks() {
-        return new ArrayList<>() {{
-            add("Nürburgring");
-        }};
-    }
-
-    private static List<String> createStockholmTracks() {
-        return new ArrayList<>() {{
-            add("Bridges");
-            add("Gamla Island Hopping");
-            add("Gamla Oval");
-            add("Gamla Stan Loop");
-            add("Island Hop");
-            add("Northern");
-            add("Northern 2");
-            add("Northern 3");
-            add("Round the Riksdagshuset");
-            add("Speed Freak");
-        }};
-    }
-
-    private static List<String> createSydneyTracks() {
-        return new ArrayList<>() {{
-            add("Argyle Street");
-            add("Cumberland Street");
-            add("Dawes Point Loop");
-            add("Downtown Short");
-            add("George St. Challenge");
-            add("Harbour Bridge");
-            add("Hickson Run");
-            add("Opera House View");
-            add("Sydney Harbour");
-            add("The Rocks Route");
-            add("The Wharf");
-            add("Under the Bridge");
-        }};
-    }
-
-    private static List<String> createWashingtonDCTracks() {
-        return new ArrayList<>() {{
-            add("Capitol Thrill");
-            add("Capitol Thrill 2");
-            add("Northside Slide");
-            add("Northside Slide");
-            add("Ring Race");
-            add("Square Dancin'");
-            add("The Tour");
-            add("Up and Over");
-        }};
-    }
-
-    private static List<String> createYokohamaTracks() {
-        return new ArrayList<>() {{
-            add("Downtown");
-            add("Honcho dori");
-            add("Kishamichi");
-            add("Minato Mirai");
-            add("Sakuragicho");
-            add("Seaside Loop");
-            add("Shinko Park");
-            add("Warehouse Loop");
-            add("Yokohama Bay Tour");
-            add("Yokohama Challenge");
-        }};
-    }
-
-    private static List<String> createParisTracks() {
-        return new ArrayList<>() {{
-            add("Avenue D'lena");
-            add("Circuit Interieur");
-            add("Elysees Challenge");
-            add("L'Arc de Triomphe");
-            add("Le Circuit Comple");
-            add("Les Deux Ponts");
-            add("Les Monuments Celebres");
-        }};
-    }
-
-    private static List<String> createLongBeachTracks() {
-        return new ArrayList<>() {{
-            add("Aquarium");
-            add("CC Circular");
-            add("Coastal Run");
-            add("Dolphin Loop");
-            add("LBC (Long Beach City)");
-            add("Long Beach Challenge");
-            add("Ocean Boulevard");
-            add("Rainbow Lagoon");
-        }};
+        this.tracks = List.copyOf(tracks);
     }
 
     public String getName() {

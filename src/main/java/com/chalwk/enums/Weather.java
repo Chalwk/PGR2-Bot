@@ -3,6 +3,9 @@
 
 package com.chalwk.enums;
 
+/**
+ * Enum representing different weather conditions with associated display text.
+ */
 public enum Weather {
     CLEAR("Clear :sun_with_face:"),
     RAIN("Rain :cloud_rain:"),

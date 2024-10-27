@@ -3,6 +3,9 @@
 
 package com.chalwk.enums;
 
+/**
+ * Enum representing different times of day with associated display text.
+ */
 public enum TimeOfDay {
     DAY("Day :sunrise:"),
     NIGHT("Night :night_with_stars:");

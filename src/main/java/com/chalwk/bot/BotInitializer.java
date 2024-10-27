@@ -5,7 +5,7 @@ package com.chalwk.bot;
 
 import com.chalwk.CommandManager.CommandListener;
 import com.chalwk.commands.pgr2;
-import com.chalwk.util.authentication;
+import com.chalwk.util.Authentication;
 import net.dv8tion.jda.api.OnlineStatus;
 import net.dv8tion.jda.api.entities.Activity;
 import net.dv8tion.jda.api.requests.GatewayIntent;
@@ -31,7 +31,7 @@ public class BotInitializer {
      * @throws IOException if there's an error reading the token file.
      */
     public BotInitializer() throws IOException {
-        this.token = authentication.getToken();
+        this.token = Authentication.getToken();
     }
 
     /**

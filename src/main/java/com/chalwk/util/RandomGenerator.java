@@ -13,137 +13,122 @@ import java.util.List;
 import java.util.Random;
 
 /**
- * A utility class for generating random game elements in PGR2 Discord Bot.
+ * Utility class for generating random game elements in the PGR2 Discord Bot.
  */
 public class RandomGenerator {
+    private final Random random = new Random();
 
     /**
-     * Generates a random vehicle class and sets it as a field in the provided embed.
+     * Adds a random vehicle class to the provided embed.
      *
-     * @param embed the {@link EmbedBuilder} instance to add the field
-     * @return the modified {@link EmbedBuilder} instance with the new field
+     * @param embed the {@link EmbedBuilder} instance
+     * @return the modified {@link EmbedBuilder} instance
      */
     public EmbedBuilder randomizeVehicleClass(EmbedBuilder embed) {
-        Random random = new Random();
-        CarCategory randomCategory = CarCategory.values()[random.nextInt(CarCategory.values().length)];
-
-        embed.setTitle("PGR2 🏎️ |  RANDOM CLASS 🎲:");
-        embed.addField("Vehicle Class:", "- " + randomCategory.getName(), true);
-
+        CarCategory randomCategory = getRandomEnum(CarCategory.class);
+        embed.setTitle("RANDOM CLASS 🎲")
+                .setColor(0x1F8B4C) // Set a color for the embed
+                .addField("**Vehicle Class:**", randomCategory.getName(), false);
         return embed;
     }
 
     /**
-     * Generates a random vehicle and sets it as a field in the provided embed.
+     * Adds a random vehicle to the provided embed.
      *
-     * @param embed the {@link EmbedBuilder} instance to add the field
-     * @return the modified {@link EmbedBuilder} instance with the new field
+     * @param embed the {@link EmbedBuilder} instance
+     * @return the modified {@link EmbedBuilder} instance
      */
     public EmbedBuilder randomizeVehicle(EmbedBuilder embed) {
-        Random random = new Random();
-        CarCategory randomCategory = CarCategory.values()[random.nextInt(CarCategory.values().length)];
-        List<String> cars = randomCategory.getCars();
-        int randomCarIndex = random.nextInt(cars.size());
-        String randomCar = cars.get(randomCarIndex);
+        CarCategory randomCategory = getRandomEnum(CarCategory.class);
+        String randomCar = getRandomElement(randomCategory.getCars());
 
-        embed.setTitle("PGR2 🏎️ |  RANDOM VEHICLE 🚗:");
-        embed.addField("Vehicle:", "- " + randomCar, true);
-
+        embed.setTitle("RANDOM VEHICLE 🚗")
+                .setColor(0x1F8B4C)
+                .addField("**Vehicle:**", randomCar, false);
         return embed;
     }
 
     /**
-     * Generates a random track and sets it as a field in the provided embed.
+     * Adds a random track to the provided embed.
      *
-     * @param embed the {@link EmbedBuilder} instance to add the field
-     * @return the modified {@link EmbedBuilder} instance with the new field
+     * @param embed the {@link EmbedBuilder} instance
+     * @return the modified {@link EmbedBuilder} instance
      */
     public EmbedBuilder randomizeTrack(EmbedBuilder embed) {
-        Random random = new Random();
-        City randomCity = City.values()[random.nextInt(City.values().length)];
-        List<String> tracks = randomCity.getTracks();
+        City randomCity = getRandomEnum(City.class);
+        String randomTrack = getRandomElement(randomCity.getTracks());
 
-        int randomTrackIndex = random.nextInt(tracks.size());
-        String randomTrack = tracks.get(randomTrackIndex);
-
-        embed.setTitle("PGR2 🏎️ |  RANDOM TRACK 🛣️:");
-        embed.addField("City:", "- " + randomCity.getName(), true);
-        embed.addField("Track:", "- " + randomTrack, true);
-
+        embed.setTitle("RANDOM TRACK 🛣️")
+                .setColor(0x1F8B4C)
+                .addField("**City:**", randomCity.getName(), true)
+                .addField("**Track:**", randomTrack, true);
         return embed;
     }
 
     /**
-     * Generates a random time of day and sets it as a field in the provided embed.
+     * Adds a random time of day to the provided embed.
      *
-     * @param embed the {@link EmbedBuilder} instance to add the field
-     * @return the modified {@link EmbedBuilder} instance with the new field
+     * @param embed the {@link EmbedBuilder} instance
+     * @return the modified {@link EmbedBuilder} instance
      */
     public EmbedBuilder randomizeTimeOfDay(EmbedBuilder embed) {
-        TimeOfDay randomTimeOfDay = TimeOfDay.values()[new Random().nextInt(TimeOfDay.values().length)];
+        TimeOfDay randomTimeOfDay = getRandomEnum(TimeOfDay.class);
 
-        embed.setTitle("PGR2 🏎️ |  RANDOM TIME OF DAY ⏳:");
-        embed.addField("Time of Day:", "- " + randomTimeOfDay.getDisplayText(), true);
-
+        embed.setTitle("RANDOM TIME OF DAY ⏳")
+                .setColor(0x1F8B4C)
+                .addField("**Time of Day:**", randomTimeOfDay.getDisplayText(), false);
         return embed;
     }
 
     /**
-     * Generates a random weather condition and sets it as a field in the provided embed.
+     * Adds a random weather condition to the provided embed.
      *
-     * @param embed the {@link EmbedBuilder} instance to add the field
-     * @return the modified {@link EmbedBuilder} instance with the new field
+     * @param embed the {@link EmbedBuilder} instance
+     * @return the modified {@link EmbedBuilder} instance
      */
     public EmbedBuilder randomizeWeather(EmbedBuilder embed) {
-        Weather randomWeather = Weather.values()[new Random().nextInt(Weather.values().length)];
+        Weather randomWeather = getRandomEnum(Weather.class);
 
-        embed.setTitle("PGR2 🏎️ |  RANDOM WEATHER ⛅️:");
-        embed.addField("Weather:", "- " + randomWeather.getDisplayText(), true);
-
+        embed.setTitle("RANDOM WEATHER ⛅️")
+                .setColor(0x1F8B4C)
+                .addField("**Weather:**", randomWeather.getDisplayText(), false);
         return embed;
     }
 
     /**
-     * Generates random values for city, track, time of day, and weather, and sets them as fields in the provided embed.
+     * Generates random values for city, track, time of day, and weather, and sets them in the provided embed.
      *
-     * @param embed the {@link EmbedBuilder} instance to add the fields
-     * @return the modified {@link EmbedBuilder} instance with the new fields
+     * @param embed the {@link EmbedBuilder} instance
+     * @return the modified {@link EmbedBuilder} instance
      */
     public EmbedBuilder randomizeAll(EmbedBuilder embed) {
+        City randomCity = getRandomEnum(City.class);
+        String randomTrack = getRandomElement(randomCity.getTracks());
+        CarCategory randomCategory = getRandomEnum(CarCategory.class);
+        String randomCar = getRandomElement(randomCategory.getCars());
 
-        Random random = new Random();
-        City randomCity = City.values()[random.nextInt(City.values().length)];
-        List<String> tracks = randomCity.getTracks();
-        int randomTrackIndex = random.nextInt(tracks.size());
-        String randomTrack = tracks.get(randomTrackIndex);
+        TimeOfDay randomTimeOfDay = (randomCity == City.PARIS || randomCity == City.LONG_BEACH) ?
+                TimeOfDay.DAY : getRandomEnum(TimeOfDay.class);
 
-        CarCategory randomCategory = CarCategory.values()[random.nextInt(CarCategory.values().length)];
-        List<String> cars = randomCategory.getCars();
-        int randomCarIndex = random.nextInt(cars.size());
-        String randomCar = cars.get(randomCarIndex);
+        Weather randomWeather = (randomTimeOfDay == TimeOfDay.NIGHT) ?
+                Weather.CLEAR : getRandomEnum(Weather.class);
 
-        TimeOfDay randomTimeOfDay;
-        Weather randomWeather;
-
-        if (randomCity == City.PARIS || randomCity == City.LONG_BEACH) {
-            randomTimeOfDay = TimeOfDay.DAY;
-        } else {
-            randomTimeOfDay = TimeOfDay.values()[random.nextInt(TimeOfDay.values().length)];
-        }
-
-        if (randomTimeOfDay == TimeOfDay.NIGHT) {
-            randomWeather = Weather.CLEAR;
-        } else {
-            randomWeather = Weather.values()[random.nextInt(Weather.values().length)];
-        }
-
-        embed.setTitle("RANDOMIZE ALL ELEMENTS:");
-        embed.addField(" City:", "- " + randomCity.getName(), true);
-        embed.addField(" Track:", "- " + randomTrack, true);
-        embed.addField(" Car:", "- " + randomCar, true);
-        embed.addField(" Time of Day:", "- " + randomTimeOfDay.getDisplayText(), true);
-        embed.addField(" Weather:", "- " + randomWeather.getDisplayText(), true);
-
+        embed.setTitle("RANDOMIZE ALL ELEMENTS:")
+                .setColor(0x1F8B4C)
+                .addField("**City:**", randomCity.getName(), true)
+                .addField("**Track:**", randomTrack, true)
+                .addField("**Car:**", randomCar, true)
+                .addField("**Time of Day:**", randomTimeOfDay.getDisplayText(), true)
+                .addField("**Weather:**", randomWeather.getDisplayText(), true);
         return embed;
+    }
+
+    private <T extends Enum<T>> T getRandomEnum(Class<T> clazz) {
+        int randomIndex = random.nextInt(clazz.getEnumConstants().length);
+        return clazz.getEnumConstants()[randomIndex];
+    }
+
+    private <T> T getRandomElement(List<T> list) {
+        return list.get(random.nextInt(list.size()));
     }
 }

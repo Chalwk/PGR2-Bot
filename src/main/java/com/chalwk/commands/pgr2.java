@@ -2,7 +2,6 @@
    See the LICENSE file or visit https://www.gnu.org/licenses/gpl-3.0.en.html for details. */
 package com.chalwk.commands;
 
-import com.chalwk.CommandManager.CommandCooldownManager;
 import com.chalwk.CommandManager.CommandInterface;
 import com.chalwk.util.RandomGenerator;
 import net.dv8tion.jda.api.EmbedBuilder;
@@ -16,7 +15,7 @@ import java.util.List;
 
 public class pgr2 implements CommandInterface {
 
-    private static final CommandCooldownManager COOLDOWN_MANAGER = new CommandCooldownManager();
+    //private static final CommandCooldownManager COOLDOWN_MANAGER = new CommandCooldownManager();
 
     @Override
     public String getName() {
@@ -25,15 +24,14 @@ public class pgr2 implements CommandInterface {
 
     @Override
     public String getDescription() {
-        return "Generate a random vehicle, vehicle class, track, time of day, and weather";
+        return "Generate a random vehicle, vehicle class, track, time of day, and weather.";
     }
 
     @Override
     public List<OptionData> getOptions() {
 
         List<OptionData> data = new ArrayList<>();
-        OptionData options = new OptionData(OptionType.STRING, "options", "Generate a random vehicle, vehicle class, track, time of day, and weather")
-
+        OptionData options = new OptionData(OptionType.STRING, "options", "Select what to randomize")
                 .setRequired(true)
                 .addChoice("class", "class")
                 .addChoice("vehicle", "vehicle")
