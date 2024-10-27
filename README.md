@@ -1,59 +1,54 @@
-# PGR2 Bot
+**PGR2 Bot** is a fun and interactive Discord bot written in Java with the JDA library, designed to elevate the gaming
+experience of *Project Gotham Racing 2* fans. This bot offers randomized game settings, bringing new challenges and
+excitement to each race.
 
-The PGR2 Bot is a fun and engaging Discord Bot written in Java utilizing the JDA library. This bot is specifically
-designed to enhance the gaming experience of Project Gotham Racing 2 fans by providing randomized game settings for
-exciting and unique challenges.
+---
 
-# Features:
+## 🚗 Key Features
 
-- `/pgr2 class`: Generates a random vehicle class to keep your gameplay fresh and exciting.
-- `/pgr2 vehicle`: Provides a random vehicle from the selected class for you to master on the racetrack.
-- `/pgr2 track`: Selects a random track from the PGR2 world, ensuring no two races are the same.
-- `/pgr2 time`: Determines a random time of day setting, adding variety and a touch of realism to your races.
-- `/pgr2 weather`: Randomizes the in-game weather conditions for an extra challenge and a more immersive experience.
-- `/pgr2 all`: Generates a combination of random class, vehicle, track, time of day, and weather settings, for the
-  ultimate randomized gaming experience.
+- **`/pgr2 class`**: Randomly generates a vehicle class, introducing variety and unpredictability to gameplay.
+- **`/pgr2 vehicle`**: Selects a specific vehicle within a class, giving players a fresh challenge to conquer.
+- **`/pgr2 track`**: Picks a random track from the PGR2 world, ensuring a unique experience every time.
+- **`/pgr2 time`**: Sets a random time of day, adding dynamic lighting and ambiance to your races.
+- **`/pgr2 weather`**: Changes the in-game weather, introducing an extra layer of difficulty for immersive play.
+- **`/pgr2 all`**: Randomizes class, vehicle, track, time of day, and weather for the ultimate game setup.
 
-## INSTALLATION AND SETUP:
+---
 
-Before installing the PGR2 Bot, ensure you have the following prerequisites:
+## 🛠 Installation and Setup
 
-1. Java 17 installed:
+### Prerequisites
 
-- Windows users: Download Java 17 from the Oracle website.
-- Linux users: Run `sudo apt install openjdk-17-jre-headless` in your terminal.
+Before setting up the **PGR2 Bot**, make sure the following prerequisites are met:
 
-2. Obtain a **bot token** from the [Discord Developer Portal](https://discord.com/developers/applications) by following
-   these steps:
+1. **Java 17**:
+    - *Windows*: [Download Java 17](https://www.oracle.com/java/technologies/javase-jdk17-downloads.html) from the
+      Oracle website.
+    - *Linux*: Run `sudo apt install openjdk-17-jre-headless` in your terminal.
 
-- Create a new application and provide a name for your bot.
-- Navigate to the **Bot** tab on the left-hand menu and set your bot's username and profile picture.
-- Reset your token, copy it, and paste it into the ./PGR2-Bot/auth.token file. Keep this token private.
-- Enable **Presence Intent**, **Server Members Intent**, and **Message Content Intent** under **Privileged Gateway
-  Intents**.
-- Under the **OAuth2** tab, use the **OAuth2 URL Generator** with the **bot** scope and **Administrator** Bot
-  Permissions to generate a URL.
-- Paste the URL into your browser and select the server to which you want to add the bot.
-- Complete the captcha and click **Authorize** to add the bot to your Discord server.
+2. **Bot Token**:
+    - Obtain a **bot token** from the [Discord Developer Portal](https://discord.com/developers/applications) by
+      following these steps:
+        - Create a new application and assign it a name.
+        - In the **Bot** tab, configure your bot’s username and profile picture.
+        - Generate a token, then copy and paste it into `./PGR2-Bot/auth.token`. **Keep this token secure.**
+        - Enable **Presence Intent**, **Server Members Intent**, and **Message Content Intent** under **Privileged
+          Gateway Intents**.
+        - Under the **OAuth2** tab, use the **OAuth2 URL Generator** with the **bot** scope and **Administrator**
+          permissions to generate an invite URL.
+        - Paste this URL in your browser to invite the bot to your server. Complete the captcha and click **Authorize**.
 
-# Running the Bot:
+---
 
-To start using the PGR2 Bot on your server, follow the steps below:
+## ▶️ Running the Bot
 
-- Windows users: Execute the run.bat file.
-- Linux users: Run the run.sh file.
+To launch **PGR2 Bot** on your Discord server:
 
-- Enjoy challenging yourself and other PGR2 fans with the randomized game settings provided by the PGR2 Bot!
+- **Windows**: Double-click the `run.bat` file.
+- **Linux**: Execute the `run.sh` file in your terminal.
 
-Future commands:
-/pgr2 submit-time [time] [track] [class]
+Enjoy creating unique racing challenges for yourself and other *Project Gotham Racing 2* fans with the **PGR2 Bot**!
 
-Validation and Formatting:
+--- 
 
-Enforce a time format, like mm:ss.sss or hh:mm:ss, to make the entries consistent.
-For easy filtering, each track and class could have preset names or codes to avoid typos (e.g., /pgr2 submit-time 02:
-35.678 Tokyo Class-C).
-Leaderboard Display:
-
-Add /pgr2 leaderboard [track] [class] command to retrieve the top 10 times on a specific track and class. This way,
-players can see who holds the current record.
+Feel free to reach out or create an issue in this repository if you encounter any questions or bugs. Happy racing!
